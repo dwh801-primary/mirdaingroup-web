@@ -11,6 +11,13 @@
     <title>Privacy Policy | Mirdain Group LLC</title>
     <link rel="canonical" href="https://mirdaingroup.com/privacy">
     
+    <meta property="og:title" content="Privacy Policy | Mirdain Group LLC">
+    <meta property="og:description" content="Privacy policy and data handling procedures for Mirdain Group LLC and the Handshake application.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mirdaingroup.com/privacy">
+    <meta property="og:image" content="https://mirdaingroup.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +27,7 @@
     <style>
         body {
             background-color: #0A0A0A; /* Void Black */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
             color: #A0A0A0; /* Carbon Grey */
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -31,11 +39,26 @@
             line-height: 1.6;
         }
         
+        @keyframes terminalBoot {
+            0% { opacity: 0; transform: translateY(5px); }
+            30% { opacity: 0; transform: translateY(5px); }
+            31% { opacity: 0.5; }
+            35% { opacity: 0; }
+            36% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        
         .container {
             max-width: 800px;
             padding: 40px;
             border-left: 2px solid #00E676; /* Mint Legal Green */
             margin: 40px 0;
+            animation: terminalBoot 0.4s steps(1, end) forwards;
         }
         
         h1, h2 {
@@ -43,16 +66,19 @@
             color: #00E676; /* Mint Legal Green */
             font-weight: 700;
             margin-bottom: 10px;
+            text-shadow: 0 0 5px rgba(0, 230, 118, 0.4);
         }
         
         h1 {
             font-size: 2.5rem;
             letter-spacing: -1px;
             color: #FFFFFF;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
         h1 span {
             color: #00E676; /* Mint Legal Green */
+            text-shadow: 0 0 5px rgba(0, 230, 118, 0.4);
         }
         
         h2 {
@@ -72,6 +98,7 @@
             color: #FFFFFF;
             font-weight: 600;
             font-family: 'Space Mono', monospace;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
         }
         
         .sys-text {
@@ -81,6 +108,13 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-shadow: 0 0 4px rgba(142, 142, 147, 0.4);
+        }
+        
+        .sys-text.blinking::after {
+            content: '█';
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
         }
         
         a {
